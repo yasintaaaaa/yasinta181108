@@ -2,10 +2,73 @@
 {% load static %}
 
 {% block meta %}
-<title>Hello, world!</title>
+<title>Menghitung Volume Kerucut</title>
 {% endblock meta %}
 
 {% block content %}
-  <h1>Hello, world!</h1>
-  <p><img src="{% static 'img/django-logo-negative.svg' %}"></p>
+<header>
+    <div class="container d-flex justify-content-between align-items-center">
+        <div id="logo">
+            <h7>
+                <p1 style="font-weight: bolder">Menghitung Volume Kerucut</p1>
+            </h7>
+        </div>
+
+        <!-- .navbar -->
+    </div>
+</header>
+<!-- End Header -->
+
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+    <div class="card" data-aos="zoom-out">
+        <div class="row">
+            <div class="column" style="margin-top: auto; margin-bottom: auto">
+                <table style="color: black">
+                    <tr>
+                        <td style="width: 2.5cm">Nama</td>
+                        <td>:</td>
+                        <td>Yasinta Nor Fitriah</td>
+                    </tr>
+                    <tr>
+                        <td>NIM</td>
+                        <td>:</td>
+                        <td>181810101108</td>
+                    </tr>
+                    <tr>
+                        <td>Jurusan</td>
+                        <td>:</td>
+                        <td>Matematika</td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: text-top">Fakultas</td>
+                        <td style="vertical-align: text-top">:</td>
+                        <td>Matematika dan Ilmu Pengetahuan Alam</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="column">
+                <img src="{% static 'img/DSCF2393.jpg' %}" style="height: 7cm; border-radius: 50pt"/>
+            </div>
+        </div>
+    </div>
+</section>
+<form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Jari-jari Kerucut</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Input r"
+               name="r">
+    </div>
+     <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Tinggi Kerucut</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Input t"
+               name="t">
+ </div>
+    <button type="submit" class="btn btn-success">Proses</button>
+    <div class="mb-3">
+        <label for="formGroupExampleOutput2" class="form-label">Volume Kerucut</label>
+        <output type="text" class="form-control" id="formGroupExampleOutput2" name="keluar">{{keluar}}</output>
+    </div>
+</form>
 {% endblock content %}
